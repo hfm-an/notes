@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script defer src="index.js"></script>
+<script defer src="index2.js"></script>
+<script defer src="index3.js"></script>
+</body>
+<script>
+    // 1.
+    // 执行到这里的时候，浏览器对 index.js 的加载, 一直处在 pending 状态
+    // 执行完这里之后，才会对 index.js 进行加载
+
+    // 2.
+    // 可以把浏览器对于 defer 修饰的元素想象成一个数组
+    // 解析到第一个带有 defer 的 script1，向这个数组里 push 当前的 script，并且将 script1 设置为 pending 状态
+    // 以此类推 script2, script3
+    // 然后当且仅当浏览器解析完了所有的 html，再去将那个数组，从头开始，下载时同步并行下载 index1, index2, index3, 依次执行 index1, index2, index3
+    console.log('这里已经到了文档的最底部')
+    debugger
+</script>
+</html>
