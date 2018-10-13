@@ -21,5 +21,8 @@
     // 然后当且仅当浏览器解析完了所有的 html，再去将那个数组，从头开始，下载时同步并行下载 index1, index2, index3, 依次执行 index1, index2, index3
     console.log('这里已经到了文档的最底部')
     debugger
+    window.addEventListener('DOMContentLoaded', function () {
+        console.log('DOMContentLoad!')
+    })
 </script>
 </html>
